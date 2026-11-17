@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="icon" href="data:,">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src='login.js'></script>
+    <title>Авторизация</title>
+</head>
+
+<body class="authorization">
+    <div class="info">
+        <span class="info-name">Пользователь:</span>
+        <form action="index.html" method="post"><br>
+            <input type="text" name="login" maxlength="32" placeholder="имя пользователя" required="required">
+            <br>
+            <span class="info-name">Пароль:</span>
+            <input type="password" name="password" maxlength="32" placeholder="пароль пользователя" required="required">
+            <input type="hidden" name="app" value="../../build/s21_cli.app">
+            <input type="hidden" name="app_arg" value="w">
+            <input type="hidden" name="command" value="exit">
+            <input type="submit" value="Войти">
+        </form>
+    </div>
+    <pre id="data"></pre>
+
+</body>
+
+</html>

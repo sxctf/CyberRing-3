@@ -1,0 +1,6 @@
+# Never bake per-VM secrets into the image context.
+.git
+ansible
+*.md
+.gitlab-ci.yml
+.dockerignore

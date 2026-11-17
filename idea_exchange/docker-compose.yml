@@ -1,0 +1,52 @@
+services:
+  web:
+    image: ${REGISTRY_IMAGE:-idea_exchange}/web:${IMAGE_TAG:-latest}
+    environment:
+      - JWT_SECRET=854cf7d2c2268336c6a705e407dad61f4f01b842e2c59deed1f9e7edde4b7bbb
+    build:
+      context: ./back
+    restart: always
+    mem_limit: 1G
+    memswap_limit: 1G
+    cpu_count: 1
+    pids_limit: 128
+    ulimits:
+      nofile:
+        soft: 32768
+        hard: 32768
+    depends_on:
+    - mongo
+  mongo:
+    image: mongo:4.4.20-focal
+    restart: unless-stopped
+    volumes:
+      - mongo:/data/db
+    mem_limit: 1G
+    memswap_limit: 1G
+    cpu_count: 1
+    pids_limit: 128
+    ulimits:
+      nofile:
+        soft: 8192
+        hard: 8192
+  nginx:
+    image: ${REGISTRY_IMAGE:-idea_exchange}/nginx:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    ports:
+      - 18888:80
+    depends_on:
+      - web
+      - mongo
+    mem_limit: 1G
+    memswap_limit: 1G
+    cpu_count: 1
+    pids_limit: 128
+    ulimits:
+      nofile:
+        soft: 8192
+        hard: 8192
+volumes:
+  mongo:

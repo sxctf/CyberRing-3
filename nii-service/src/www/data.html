@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="icon" href="data:,">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src='data.js'></script>
+    <title>Секретные данные</title>
+</head>
+
+<body>
+    <div class="content">
+        <aside class="page-sidebar">
+
+            <p class="sidebar-greeting">Добрый день, <span class="username">username</span>!<br>
+                Ваш уровень доступа: <span class="userlevel">0</span><br>
+                <a class="logout" href="/logout.html">Выйти</a>
+            </p>
+
+            <ul class="nav-menu">
+                <li><a href="data.html" class="current-link">Секретные данные</a></li>
+                <li><a href="users.html">Пользователи</a></li>
+            </ul>
+        </aside>
+        <main>
+            <h1>Секретные данные</h1>
+            <article>
+
+                <div class="info">
+                    <form action="#insert" id="insert" method="post">
+                        <span class="info-name">Добавить данные</span>
+                        <input type="text" name="arg1" maxlength="32" placeholder="имя данных" nrequired="required"><br>
+                        <input type="text" name="arg3" maxlength="32" placeholder="данные" required="required">
+                        <label class="info-name">Уровень доступа
+                            <select name="arg2" required="required">
+                                <option value="" disabled selected hidden>-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </label>
+                        <input type="hidden" name="app" value="../../build/s21_cli.app">
+                        <input type="hidden" name="app_arg" value="w">
+                        <input type="hidden" name="command" value="insert">
+                        <input type="submit" value="Добавить">
+                    </form>
+                </div>
+
+                <div class="info">
+                    <form action="#update" id="update" method="post">
+                        <span class="info-name">Изменить данные</span>
+                        <input type="text" name="arg1" maxlength="32" placeholder="имя данных" required="required"><br>
+                        <input type="text" name="arg3" maxlength="32" placeholder="данные" required="required">
+                        <label class="info-name">Уровень доступа
+                            <select name="arg2" required="required">
+                                <option value="" disabled selected hidden>-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </label>
+                        <input type="hidden" name="app" value="../../build/s21_cli.app">
+                        <input type="hidden" name="app_arg" value="w">
+                        <input type="hidden" name="command" value="update">
+                        <input type="submit" value="Изменить">
+                    </form>
+                </div>
+
+                <div class="info">
+                    <form action="#delete" id="delete" method="post">
+                        <span class="info-name">Удалить данные</span>
+                        <input type="text" name="arg1" maxlength="32" placeholder="имя данных" required="required"><br>
+                        <input type="hidden" name="app" value="../../build/s21_cli.app">
+                        <input type="hidden" name="app_arg" value="w">
+                        <input type="hidden" name="command" value="delete">
+                        <input type="submit" value="Удалить">
+                    </form>
+                </div>
+
+
+                <div class="info">
+                    <form action="#select_name" id="select_name" method="post">
+                        <span class="info-name">Данные по имени</span><br><br>
+                        <input type="hidden" name="arg1" value="name">
+                        <input type="text" name="arg2" maxlength="32" placeholder="имя данных"
+                            required="required"><br><br><br>
+                        <input type="hidden" name="app" value="../../build/s21_cli.app">
+                        <input type="hidden" name="app_arg" value="w">
+                        <input type="hidden" name="command" value="select">
+                        <input type="submit" value="Показать">
+                    </form>
+                </div>
+
+                <div class="info">
+                    <form action="#select_author" id="select_author" method="post">
+                        <span class="info-name">Данные пользователя</span><br><br>
+                        <input type="hidden" name="arg1" value="author">
+                        <input type="text" name="arg2" maxlength="32" placeholder="имя пользователя"
+                            required="required"><br><br><br>
+                        <input type="hidden" name="app" value="../../build/s21_cli.app">
+                        <input type="hidden" name="app_arg" value="w">
+                        <input type="hidden" name="command" value="select">
+                        <input type="submit" value="Показать">
+                    </form>
+                </div>
+
+                <div class="info">
+                    <form action="#select_level" id="select_level" method="post">
+                        <span class="info-name">Данные по доступу</span><br><br>
+                        <input type="hidden" name="arg1" value="level">
+                        <label class="info-name">Уровень доступа
+                            <select name="arg2" required="required">
+                                <option value="" disabled selected hidden>-</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="all">all</option>
+                            </select>
+                        </label>
+                        <input type="hidden" name="app" value="../../build/s21_cli.app">
+                        <input type="hidden" name="app_arg" value="w">
+                        <input type="hidden" name="command" value="select">
+                        <input type="submit" value="Показать">
+                    </form>
+                </div>
+
+                <pre id="data"></pre>
+
+            </article>
+        </main>
+    </div>
+
+</body>
+
+</html>

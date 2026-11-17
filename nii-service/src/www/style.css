@@ -1,0 +1,373 @@
+body {
+    background-color: #333333;
+    padding: 0;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    color: #ECF0F1;
+    line-height: 2em;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 3em;
+    color: #01B0F0;
+    text-align: center;
+    margin: 30px;
+}
+
+.sidebar-greeting {
+    line-height: 1.2em;
+    padding: 0 5px;
+}
+
+.sidebar-greeting .username,.sidebar-greeting .userlevel {
+    font-weight: 600;
+}
+
+.sidebar-greeting .logout {
+    color: #01B0F0;
+}
+
+header.page-header {
+        z-index: 5;
+        min-height: 20px;
+        padding: 20px;
+        color: white;
+        background-color: #333333;
+        background-image:
+            linear-gradient(45deg, #000000 25%, transparent 25%),
+            linear-gradient(-45deg, #000000 25%, transparent 25%),
+            linear-gradient(135deg, #000000 25%, transparent 25%),
+            linear-gradient(-135deg, #000000 25%, transparent 25%);
+        background-position: 10px 0, 10px 0, 0 0, 0 0;
+        background-size: 20px 20px;
+        box-shadow: 0 0 5px 0 #333333;
+        margin-bottom: 30px;
+}
+
+.content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.content .page-sidebar{
+    float: left;
+    width: 270px;
+    display: inline-block
+}
+
+.content .nav-menu {
+    list-style: none;  
+    padding: 0;
+}
+
+
+.content .nav-menu li a {
+    display: block;
+    color: #ECF0F1;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    box-sizing: border-box;
+    min-height: 50px;
+}
+
+.content .nav-menu .nav-rstp {
+    min-height: 80px;
+}
+
+.content .nav-menu li a:hover{
+    border-bottom: 4px solid #AEEE00;
+    color: #AEEE00;
+}
+
+.content .nav-menu li .current-link {
+    border-bottom: 4px solid #FF358B;
+    color: #FF358B;
+}
+
+.content .nav-menu li .current-link:hover {
+    border-bottom: 4px dashed #FF358B;
+    color: #FF358B;
+}
+
+main {
+    float: left;
+    width: 70%;
+    margin: 0 auto;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+table {
+
+/* border-radius: 15px; */
+ border: 6px solid /*transparent*/rgba(1, 176, 240, 0.1);
+    border-collapse: collapse;
+/*     border: 5px solid;; /* Рамка вокруг таблицы */
+
+}
+
+td, th {
+    border: 4px solid /*transparent*/rgba(1, 176, 240, 0.1);
+    text-align: center;
+/*     font-size: 20px; */
+}
+th {
+    border: 6px solid /*transparent*/rgba(1, 176, 240, 0.1);
+    font-weight: bold;
+/*     background-color: #01B0F0;  */
+}
+article .command-list {
+    list-style: none;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+article .command-list li {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+article .command-list li .choose-variant {
+    padding-left: 40px;
+    display: block;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+article .command-list li:hover .choose-name{
+    color: #AEEE00;
+    border-bottom: 3px dashed;
+    padding-bottom: 5px;
+}
+
+article form/*:hover*/ .grepting{
+    float: right;
+    column-count: 3;
+     margin: 1%; 
+    overflow: auto;
+    
+    
+    
+/*      transition:  ease; /* Плавный переход при изменении прозрачности */  
+/*      position: absolute; /* Абсолютное позиционирование для таблицы */  
+/*      right: 20px; /* Отступ от правого края */  
+/*      column-count: 3;    */
+
+}
+
+article form:hover .loc-size{
+    border: 6px solid rgba(1, 176, 240, 0.1);
+    float: right;
+    margin: 10px;
+    height: 259px;
+    overflow: auto;
+}
+article form:hover .list_user{
+    position: absolute;               /* 2 */ 
+    top: 50%;                         /* 3 */  
+    transform: translate(0, -50%);
+    height: 80px;
+    overflow: auto;
+}
+article .grepting th:first-child {
+    /*height: 10px;*/
+    /* width: auto; /* Ширина первого столбца */ 
+    /*padding: 0; */
+    }
+    td:nth-child(2) {
+        width: 140px; /* Ширина второго столбца (State) обязательно для равномерных таблиц */ 
+    }
+    td, th {
+        /*margin: 0px; */
+        /*padding: 0px; */
+        /*height: 10px; */
+        /*font-size: 12px; */
+        /*height: auto; */
+    }
+    h4 {
+        /*padding: 0; */
+        /*text-transform: uppercase; */
+    }
+    
+article  .loc-size th:first-child {
+            width: 200px; /* Ширина первого столбца */
+        }
+        th:nth-child(2) {
+            width: 90px; /* Ширина второго столбца */
+        }th:nth-child(3) {
+            width: 70px; /* Ширина второго столбца */
+        }
+        
+article  .list_user td:first-child {
+           width: 200px;; /* Ширина первого столбца */
+        }
+
+input[type="submit"], .info-button {
+    width: 185px;
+    background-color: #01B0F0;
+    color: #333333;
+    border: 0px solid black;
+    border-radius: 5px;
+    margin: auto;
+    font-size: 20px;
+    padding: 10px 20px;
+    display: block;
+    cursor: pointer;
+    /*position: sticky;
+    grid-row: 2;*/
+}
+.command-list input[type="submit"]{
+    margin-left: 35%; /* стабилизация кнопки*/
+    margin-top: 1.8%;  /*внешний отступ сверху кнопки*/ 
+}
+
+input[type="submit"]:active, .info-button:active {
+    opacity: 0.5;
+}
+
+.info input[type="submit"]{ /*кнопки на гл стр*/
+    width: 185px; 
+    position: absolute;    
+    bottom: 30px; /* Устанавливаем кнопку внизу */    
+    left: 50%;   
+    transform: translateX(-50%); /* Сдвигаем кнопку влево на половину её ширины для центрирования */  
+}
+.infio input[type="submit"]{ /*кнопки на гл стр*/
+/*     width: 185px;  */
+/*     position: absolute;     */
+/*     bottom: 15px; /* Устанавливаем кнопку внизу */     
+/*     left: 50%;    */
+/*     transform: translateX(-50%); /* Сдвигаем кнопку влево на половину её ширины для центрирования */   
+}
+
+.info-button{
+    width: 250px; 
+}
+
+form:hover {
+    background-color: rgba(1, 176, 240, 0.1);
+}
+form {
+    padding: 5px; 
+    border-radius: 5px;  
+    margin-bottom: 15px; /*внешний отступ между формами*/ 
+    overflow: hidden; 
+    position: relative;
+}
+
+.info, .infio {
+    background-color: rgba(1, 176, 240, 0.2);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 15px;
+    vertical-align: top;
+    width: 210px;
+    height: 310px;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative; /* Устанавливаем относительное позиционирование для контейнера */
+}
+.info form {
+    padding: 10px 15px;
+    margin-right: 15px;
+    width: 210px;
+    height: 310px;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: absolute; /* Устанавливаем абсолютное позиционирование для формы */ 
+    bottom: 10px; /* Отступ от нижней границы контейнера info */
+    top: 0;
+    left: 0; /* Можно настроить по желанию */ 
+    right: 0; /* Можно настроить по желанию */ 
+}
+
+.info:hover .info-name { 
+    color: #AEEE00;
+/*     border-bottom: 3px dashed; */
+}
+
+.info:hover { 
+    color: #AEEE00;
+/*     border-bottom: 3px dashed; */
+}
+
+.info-name {
+    font-size: 20px;
+}
+
+.hint {
+    font-size: 12px;
+    line-height: 1.3em;
+}
+
+/*.command_space {
+    display: inline-block;
+}
+.command_info_space {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.command_info {
+    background-color: rgba(1, 176, 240, 0.2);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left: 100px;
+    vertical-align: top;
+    width: 50%;
+    height: 250px;
+    margin-bottom: 15px;
+}*/
+
+#data {
+    background-color: rgba(1, 176, 240, 0.2);
+    padding-left: 35px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+body #data {
+    padding-left: 0px; 
+}
+
+article #data {
+    padding-left: 35px; 
+}
+
+/* Statistic data */
+span #data {
+    font-size: 17px;
+}
+
+.info-port {
+    padding-left: 25px;
+    font-size: 17px;
+}
+
+.info-authorization {
+    background-color: rgba(1, 176, 240, 0.2);
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: top;
+    width: 210px;
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.authorization {
+    margin-top: 200px;
+    text-align: center;  
+}

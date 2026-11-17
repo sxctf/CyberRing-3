@@ -1,0 +1,31 @@
+services:
+  # 1. Служебный сервис для создания папки и настройки прав
+  init:
+    image: alpine:latest
+    # Передаем UID и GID текущего пользователя хоста
+    user: "${UID:-1000}:${GID:-1000}"
+    # Команда создает папку внутри контейнера (а из-за bind mount она создастся на хосте)
+    command: mkdir -p /mnt/data
+    volumes:
+      # Монтируем текущую папку хоста внутрь служебного контейнера
+      - .:/mnt
+
+  nii_service:
+    image: ${REGISTRY_IMAGE:-nii-service}:${IMAGE_TAG:-latest}
+    build: .
+    ports:
+      - "8888:8080"
+    environment:
+      CHECKER_PSW: ${CHECKER_PSW:?CHECKER_PSW must be set}
+    volumes:
+      # Монтируем созданную папку (теперь она гарантированно создана с вашими правами)
+      - ./data:/data
+    # Ждем, пока отработает служебный контейнер init
+    ulimits:
+      stack:
+        soft: 67108864
+        hard: 67108864
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    restart: always
